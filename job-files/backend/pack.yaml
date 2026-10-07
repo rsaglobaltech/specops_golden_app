@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Job Files
-  version: 0.1.2
+  version: 0.1.3
   language: en
   project_type: backend
 variables:
@@ -297,4 +297,40 @@ scenarios:
     template: templates/features/a_record_made_offline_is_archived_centrally.feature.tpl
     feature: A record made offline is archived centrally
     scenario: A record made offline is archived centrally
+    status: Draft
+  - id: SCN-206
+    requirement_id: REQ-201
+    use_case: UC-201
+    seed: true
+    target: features/job-files/a_job_file_is_created_with_its_identity.feature
+    template: templates/features/a_job_file_is_created_with_its_identity.feature.tpl
+    feature: A job file is created with its identity
+    scenario: A job file is created with its identity
+    status: Draft
+  - id: SCN-207
+    requirement_id: REQ-205
+    use_case: UC-205
+    seed: true
+    target: features/job-files/a_tailgate_meeting_records_who_attended.feature
+    template: templates/features/a_tailgate_meeting_records_who_attended.feature.tpl
+    feature: A tailgate meeting records who attended
+    scenario: A tailgate meeting records who attended
+    status: Draft
+  - id: SCN-208
+    requirement_id: REQ-206
+    use_case: UC-206
+    seed: true
+    target: features/job-files/a_meal_break_shows_on_the_day_s_timesheet.feature
+    template: templates/features/a_meal_break_shows_on_the_day_s_timesheet.feature.tpl
+    feature: A meal break shows on the day's timesheet
+    scenario: A meal break shows on the day's timesheet
+    status: Draft
+  - id: SCN-209
+    requirement_id: REQ-209
+    use_case: UC-207
+    seed: true
+    target: features/job-files/the_office_finds_records_by_type_and_date.feature
+    template: templates/features/the_office_finds_records_by_type_and_date.feature.tpl
+    feature: The office finds records by type and date
+    scenario: The office finds records by type and date
     status: Draft

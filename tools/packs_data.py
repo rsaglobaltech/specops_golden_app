@@ -392,3 +392,89 @@ DEPENDS = {
     "ai-communication": {2: [1], 3: [2], 4: [1], 5: [1]},
     "learning": {2: [1], 3: [2], 4: [3], 9: [2]},
 }
+
+# v0.1.3 — a scenario for every requirement that had none. Sixteen
+# requirements reached the app with nothing to verify them, so `plan` put them
+# under "Needs Feature File" and the harness had no `Then` to hold the agent
+# to. Appended, not inserted: scenario ids are positional, and the ids the app
+# already links to must not move.
+MORE_SCENARIOS = {
+    "time-attendance": [
+        (7, 4, "A supervisor rejects a flagged punch with a reason",
+         ["a clock-out flagged OUTSIDE_GEOFENCE for worker \"Luis Ortega\" on a crew the supervisor leads",
+          "the supervisor rejects it with the reason \"Left site at 15:10 per GC log\"",
+          "the review is recorded as REJECTED with that reason and the punch itself is unchanged"]),
+        (9, 6, "A geofence change does not rejudge past punches",
+         ["jobsite \"Mission Bay Tower\" with a 100 m geofence and a clock in accepted 80 m from its center",
+          "an administrator reduces the geofence radius to 50 m",
+          "the geofence is at version 2 and the earlier clock in is still judged against version 1 as accepted"]),
+        (10, 7, "A worker sees the day's hours with a pending adjustment",
+         ["a worker clocked in at 06:00 and out at 14:30 with a 30 minute meal break, and has a pending adjustment of +15 minutes",
+          "they open their hours for that day in Spanish",
+          "they see 8.0 approved hours and 0.25 pending hours labelled \"pendiente\""]),
+        (11, 8, "An unresolved flag holds back only its own row from the export",
+         ["a pay period with 3 approved timesheet rows and 1 row with an unresolved LOW_ACCURACY flag",
+          "an administrator exports the period as CSV",
+          "the CSV has the header row and 3 data rows, and the flagged row is reported as held back"]),
+    ],
+    "job-files": [
+        (1, 1, "A job file is created with its identity",
+         ["an administrator with job number \"GSR-2417\", name \"Mission Bay Tower\", address \"1500 Owens St, San Francisco\", general contractor \"Webcor\" and start date 2026-11-02",
+          "they create the job file",
+          "the job file exists with those five values and no records"]),
+        (5, 5, "A tailgate meeting records who attended",
+         ["a job file \"GSR-2417\" and a tailgate meeting on topic \"Working near rebar caps\" presented by foreman \"Ana Ruiz\"",
+          "3 workers sign the attendance",
+          "the meeting is stored on the job file with its topic, date, presenter and 3 signatures"]),
+        (6, 6, "A meal break shows on the day's timesheet",
+         ["a worker on job \"GSR-2417\" who starts a meal break at 11:30",
+          "they end the break at 12:00",
+          "the break is recorded as a 30 minute meal break with its start, end and location, and the day's timesheet lists it"]),
+        (9, 7, "The office finds records by type and date",
+         ["job file \"GSR-2417\" with 2 JHAs and 1 forklift inspection dated 2026-11-03, and 1 JHA dated 2026-11-04",
+          "the office searches the job file for type JHA on 2026-11-03",
+          "exactly the 2 JHAs from 2026-11-03 are returned"]),
+    ],
+    "foreman-log": [
+        (2, 2, "An audio note longer than 5 minutes is refused",
+         ["a foreman's log entry for 2026-11-03",
+          "they attach an audio note of 5 minutes 20 seconds",
+          "the note is refused with the reason that audio notes are limited to 5 minutes"]),
+        (5, 4, "An entry exported as evidence carries its capture data",
+         ["a log entry with 2 photos, a transcript and a capture time of 2026-11-03 07:42 at the jobsite",
+          "the office exports the entry as evidence",
+          "a PDF is produced that contains the 2 photos, the transcript, the capture time and the location"]),
+    ],
+    "daily-reports": [
+        (3, 2, "A delay is recorded with its cause",
+         ["a draft daily report for job \"GSR-2417\" on 2026-11-03",
+          "the foreman adds a delay of 90 minutes caused by \"Concrete pump late\"",
+          "the report lists the delay with 90 minutes and that cause"]),
+        (4, 3, "A submitted report is locked and sent",
+         ["a completed daily report for job \"GSR-2417\" with recipients office@gsr.example and pm@webcor.example",
+          "the foreman submits it",
+          "the report is locked, stored in the job file, and a PDF is queued for both recipients"]),
+    ],
+    "ai-communication": [
+        (1, 1, "An English email is explained in Spanish",
+         ["an English email from the general contractor asking \"Please submit the revised rebar shop drawings for Level 3 by Friday 11/7\"",
+          "the user asks for an explanation",
+          "the Spanish explanation names who asks, what is asked (planos de taller revisados del nivel 3) and the deadline (viernes 7 de noviembre)"]),
+    ],
+    "learning": [
+        (2, 2, "Every lesson section has an interaction",
+         ["a lesson \"Reading bar marks\" with 3 sections",
+          "it is published",
+          "publishing is accepted only because each of the 3 sections has at least one question, exercise or calculator"]),
+        (3, 3, "A quiz result is visible to the learner's manager",
+         ["a learner who completes the quiz of course \"Rebar basics\" with 8 correct answers out of 10",
+          "their manager opens the team's progress",
+          "the manager sees the course as completed with a score of 80% and the completion date"]),
+        (8, 6, "A plan reader answer cites the sheet and carries the warning",
+         ["a foreman who uploaded plan sheet \"S-201\" and asks \"What bar size is called for in the grade beams?\"",
+          "the assistant answers",
+          "the answer references sheet S-201 and states that it must be checked against the stamped structural drawings"]),
+    ],
+}
+for _pack in PACKS:
+    _pack["scenarios"] = _pack["scenarios"] + MORE_SCENARIOS.get(_pack["slug"], [])

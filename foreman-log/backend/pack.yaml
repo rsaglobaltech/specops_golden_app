@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Foreman Log (CYB)
-  version: 0.1.2
+  version: 0.1.3
   language: en
   project_type: backend
 variables:
@@ -175,4 +175,22 @@ scenarios:
     template: templates/features/an_audio_note_in_spanish_is_transcribed.feature.tpl
     feature: An audio note in Spanish is transcribed
     scenario: An audio note in Spanish is transcribed
+    status: Draft
+  - id: SCN-304
+    requirement_id: REQ-302
+    use_case: UC-302
+    seed: true
+    target: features/foreman-log/an_audio_note_longer_than_5_minutes_is_refused.feature
+    template: templates/features/an_audio_note_longer_than_5_minutes_is_refused.feature.tpl
+    feature: An audio note longer than 5 minutes is refused
+    scenario: An audio note longer than 5 minutes is refused
+    status: Draft
+  - id: SCN-305
+    requirement_id: REQ-305
+    use_case: UC-304
+    seed: true
+    target: features/foreman-log/an_entry_exported_as_evidence_carries_its_capture_data.feature
+    template: templates/features/an_entry_exported_as_evidence_carries_its_capture_data.feature.tpl
+    feature: An entry exported as evidence carries its capture data
+    scenario: An entry exported as evidence carries its capture data
     status: Draft

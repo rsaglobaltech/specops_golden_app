@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — AI Communication Assistant
-  version: 0.1.2
+  version: 0.1.3
   language: en
   project_type: backend
 variables:
@@ -148,4 +148,13 @@ scenarios:
     template: templates/features/email_content_is_not_kept_after_the_session.feature.tpl
     feature: Email content is not kept after the session
     scenario: Email content is not kept after the session
+    status: Draft
+  - id: SCN-505
+    requirement_id: REQ-501
+    use_case: UC-501
+    seed: true
+    target: features/ai-communication/an_english_email_is_explained_in_spanish.feature
+    template: templates/features/an_english_email_is_explained_in_spanish.feature.tpl
+    feature: An English email is explained in Spanish
+    scenario: An English email is explained in Spanish
     status: Draft

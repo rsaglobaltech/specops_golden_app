@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Foreman Learning
-  version: 0.1.2
+  version: 0.1.3
   language: en
   project_type: backend
 variables:
@@ -252,4 +252,31 @@ scenarios:
     template: templates/features/a_downloaded_lesson_works_offline.feature.tpl
     feature: A downloaded lesson works offline
     scenario: A downloaded lesson works offline
+    status: Draft
+  - id: SCN-607
+    requirement_id: REQ-602
+    use_case: UC-602
+    seed: true
+    target: features/learning/every_lesson_section_has_an_interaction.feature
+    template: templates/features/every_lesson_section_has_an_interaction.feature.tpl
+    feature: Every lesson section has an interaction
+    scenario: Every lesson section has an interaction
+    status: Draft
+  - id: SCN-608
+    requirement_id: REQ-603
+    use_case: UC-603
+    seed: true
+    target: features/learning/a_quiz_result_is_visible_to_the_learner_s_manager.feature
+    template: templates/features/a_quiz_result_is_visible_to_the_learner_s_manager.feature.tpl
+    feature: A quiz result is visible to the learner's manager
+    scenario: A quiz result is visible to the learner's manager
+    status: Draft
+  - id: SCN-609
+    requirement_id: REQ-608
+    use_case: UC-606
+    seed: true
+    target: features/learning/a_plan_reader_answer_cites_the_sheet_and_carries_the_warning.feature
+    template: templates/features/a_plan_reader_answer_cites_the_sheet_and_carries_the_warning.feature.tpl
+    feature: A plan reader answer cites the sheet and carries the warning
+    scenario: A plan reader answer cites the sheet and carries the warning
     status: Draft

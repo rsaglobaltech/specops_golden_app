@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Daily Reports
-  version: 0.1.2
+  version: 0.1.3
   language: en
   project_type: backend
 variables:
@@ -169,4 +169,22 @@ scenarios:
     template: templates/features/a_normal_day_s_report_is_finished_in_under_5_minutes.feature.tpl
     feature: A normal day's report is finished in under 5 minutes
     scenario: A normal day's report is finished in under 5 minutes
+    status: Draft
+  - id: SCN-404
+    requirement_id: REQ-403
+    use_case: UC-402
+    seed: true
+    target: features/daily-reports/a_delay_is_recorded_with_its_cause.feature
+    template: templates/features/a_delay_is_recorded_with_its_cause.feature.tpl
+    feature: A delay is recorded with its cause
+    scenario: A delay is recorded with its cause
+    status: Draft
+  - id: SCN-405
+    requirement_id: REQ-404
+    use_case: UC-403
+    seed: true
+    target: features/daily-reports/a_submitted_report_is_locked_and_sent.feature
+    template: templates/features/a_submitted_report_is_locked_and_sent.feature.tpl
+    feature: A submitted report is locked and sent
+    scenario: A submitted report is locked and sent
     status: Draft
