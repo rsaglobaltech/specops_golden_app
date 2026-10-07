@@ -92,7 +92,7 @@ events:
       - 'tone: string'
 outputs:
   files:
-    - target: docs/specs/capabilities/ai-communication.md
+    - target: docs/specs/capabilities/ai-communication/spec.md
       template: templates/capability.md.tpl
 business_rules:
   - id: RUL-501

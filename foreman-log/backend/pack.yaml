@@ -128,7 +128,7 @@ events:
       - 'entries: number'
 outputs:
   files:
-    - target: docs/specs/capabilities/foreman-log.md
+    - target: docs/specs/capabilities/foreman-log/spec.md
       template: templates/capability.md.tpl
 business_rules:
   - id: RUL-301

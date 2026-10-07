@@ -8,11 +8,15 @@ Installed from the Golden State Reinforcing specops repository into {{PROJECT_NA
 
 <!-- csda:trace kind=functional -->
 
+**Obligation (MUST).** Log an entry with photos per task or event.
+
 A foreman creates a log entry for a task or event (delay, instruction from the GC, damage, inspection) with one or more photos; the entry is timestamped and geolocated at capture.
 
 ### Requirement: REQ-302 — Record audio notes on an entry
 
 <!-- csda:trace kind=functional -->
+
+**Obligation (MUST).** Record audio notes on an entry.
 
 A foreman records audio notes (up to 5 minutes each) on an entry; audio is stored with the entry and can be played from the office.
 
@@ -20,17 +24,23 @@ A foreman records audio notes (up to 5 minutes each) on an entry; audio is store
 
 <!-- csda:trace kind=business-rule -->
 
+**Obligation (MUST).** Entries are tamper-evident.
+
 An entry's capture time, location and media hashes are fixed at capture; edits append a revision and never change the original, so the log can back a claim with the general contractor.
 
 ### Requirement: REQ-304 — Transcribe audio notes
 
 <!-- csda:trace kind=functional -->
 
+**Obligation (MAY).** Transcribe audio notes.
+
 Audio notes are transcribed (English and Spanish) so they can be searched and quoted.
 
 ### Requirement: REQ-305 — Share an entry as evidence
 
 <!-- csda:trace kind=functional -->
+
+**Obligation (SHOULD).** Share an entry as evidence.
 
 A foreman or the office exports an entry, or a date range of entries, as a PDF with photos, transcript, timestamps and map.
 

@@ -178,7 +178,7 @@ events:
       - 'sheet: string'
 outputs:
   files:
-    - target: docs/specs/capabilities/learning.md
+    - target: docs/specs/capabilities/learning/spec.md
       template: templates/capability.md.tpl
 business_rules:
   - id: RUL-601

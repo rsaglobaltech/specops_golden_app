@@ -257,7 +257,7 @@ events:
       - 'rows: number'
 outputs:
   files:
-    - target: docs/specs/capabilities/time-attendance.md
+    - target: docs/specs/capabilities/time-attendance/spec.md
       template: templates/capability.md.tpl
 business_rules:
   - id: RUL-101

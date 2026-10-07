@@ -118,8 +118,10 @@ def build(pack):
     cap = [f"# Capability — {pack['name']}", "", pack["summary"], "",
            "Installed from the Golden State Reinforcing specops repository into {{PROJECT_NAME}}.", ""]
     for req, (_, _, kind, _) in zip(reqs, pack["requirements"]):
+        keyword = {"Must": "MUST", "Should": "SHOULD", "Could": "MAY"}[req["priority"]]
         cap += [f"### Requirement: {req['id']} — {req['title']}", "",
                 f"<!-- csda:trace kind={kind} -->", "",
+                f"**Obligation ({keyword}).** {req['title']}.", "",
                 req["description"].split("] ", 1)[1], ""]
     if pack["rules"]:
         cap += ["## Business rules", ""]
@@ -138,7 +140,7 @@ def build(pack):
         "commands": commands,
         "aggregates": aggregates,
         "events": events,
-        "outputs": {"files": [{"target": f"docs/specs/capabilities/{pack['slug']}.md", "template": "templates/capability.md.tpl"}]},
+        "outputs": {"files": [{"target": f"docs/specs/capabilities/{pack['slug']}/spec.md", "template": "templates/capability.md.tpl"}]},
         "business_rules": [
             {"id": ident("RUL", r, i), "title": t, "context": contexts[0]["id"], "description": d}
             for i, (t, d) in enumerate(pack["rules"], 1)
