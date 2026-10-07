@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Daily Reports
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,21 +21,29 @@ requirements:
     priority: Must
     description: '[non-functional] A foreman with a normal day completes and submits the report in under 5 minutes, measured in the pilot.'
     status: Draft
+    depends_on:
+      - REQ-401
   - id: REQ-403
     title: Add work done, delays and materials
     priority: Must
     description: '[functional] The foreman adds work completed, delays with their cause, materials received and equipment on site, in English or Spanish.'
     status: Draft
+    depends_on:
+      - REQ-401
   - id: REQ-404
     title: Submit and share the report
     priority: Must
     description: '[functional] A submitted report is locked, stored in the job file and sent as PDF to configured recipients (office, PM).'
     status: Draft
+    depends_on:
+      - REQ-401
   - id: REQ-405
     title: A submitted report is never edited
     priority: Must
     description: '[business-rule] Changes after submission create an amendment linked to the original.'
     status: Draft
+    depends_on:
+      - REQ-404
 bounded_contexts:
   - id: BC-401
     name: DailyReport

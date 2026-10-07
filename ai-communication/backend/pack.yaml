@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — AI Communication Assistant
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,21 +21,29 @@ requirements:
     priority: Must
     description: '[functional] From what the user says in Spanish (typed or dictated), the assistant drafts a professional English reply, shown side by side with its Spanish back-translation.'
     status: Draft
+    depends_on:
+      - REQ-501
   - id: REQ-503
     title: The user always sends, never the AI
     priority: Must
     description: '[business-rule] The assistant never sends email by itself. The user reviews, edits and sends from their own mail client.'
     status: Draft
+    depends_on:
+      - REQ-502
   - id: REQ-504
     title: Keep construction terms precise
     priority: Should
     description: '[functional] A glossary of rebar and construction terms (RFI, submittal, T&M, tag work, pour, PT cables, rebar sizes) is applied so translations keep trade meaning.'
     status: Draft
+    depends_on:
+      - REQ-501
   - id: REQ-505
     title: No customer data is used to train models
     priority: Must
     description: '[non-functional] Email content is sent only to an AI provider under terms that exclude training on it, and is not stored beyond the session unless the user saves the draft.'
     status: Draft
+    depends_on:
+      - REQ-501
 bounded_contexts:
   - id: BC-501
     name: Communication

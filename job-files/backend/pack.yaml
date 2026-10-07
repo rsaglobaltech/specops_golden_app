@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Job Files
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,21 +21,29 @@ requirements:
     priority: Must
     description: '[functional] A worker takes photos of the jobsite and the day''s progress from the app; each is stored with the job, author, timestamp and location, and is available to the office within minutes of the phone regaining network.'
     status: Draft
+    depends_on:
+      - REQ-201
   - id: REQ-203
     title: Record a daily Job Hazard Analysis (JHA)
     priority: Must
     description: '[functional] Before work starts, the crew''s JHA is filled in: tasks, hazards, controls and the signatures of every worker on the crew. A day without a JHA is visible on the job file.'
     status: Draft
+    depends_on:
+      - REQ-201
   - id: REQ-204
     title: Record forklift inspections
     priority: Must
     description: '[functional] A pre-shift forklift inspection checklist (Cal/OSHA) is completed per forklift and day. A failed item marks the forklift out of service until a corrective note is filed.'
     status: Draft
+    depends_on:
+      - REQ-201
   - id: REQ-205
     title: Record tailgate safety meetings
     priority: Must
     description: '[functional] A tailgate meeting records topic, date, presenter and attendees'' signatures, and can attach a photo of the sign-in sheet.'
     status: Draft
+    depends_on:
+      - REQ-201
   - id: REQ-206
     title: Track meal and rest breaks precisely
     priority: Must
@@ -46,16 +54,22 @@ requirements:
     priority: Should
     description: '[business-rule] Under California rules a 30-minute meal period starts before the end of the 5th hour worked, and a second before the end of the 10th. The app reminds the worker at 4h30m and records a missed or late meal period for the office. A covering collective bargaining agreement may change this; the thresholds are configurable.'
     status: Draft
+    depends_on:
+      - REQ-206
   - id: REQ-208
     title: Every worker files from their own phone
     priority: Must
     description: '[non-functional] All job-file actions work from the worker''s own Android or iPhone, offline included, with records queued and synced; everything is archived centrally.'
     status: Draft
+    depends_on:
+      - REQ-202
   - id: REQ-209
     title: Search a job file
     priority: Should
     description: '[functional] The office finds any record in a job file by date, type, author or text.'
     status: Draft
+    depends_on:
+      - REQ-201
 bounded_contexts:
   - id: BC-201
     name: JobFile

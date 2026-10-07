@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Foreman Learning
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,16 +21,22 @@ requirements:
     priority: Must
     description: '[functional] A lesson combines short text, images or video, and at least one interaction (question, exercise or calculator) per section.'
     status: Draft
+    depends_on:
+      - REQ-601
   - id: REQ-603
     title: Quiz each course and track progress
     priority: Must
     description: '[functional] Each course ends with a quiz; the learner''s progress, scores and completion dates are recorded and visible to their manager.'
     status: Draft
+    depends_on:
+      - REQ-602
   - id: REQ-604
     title: Compliance courses keep a certificate
     priority: Must
     description: '[business-rule] Heat illness prevention, sexual harassment prevention and substance abuse prevention issue a dated completion certificate, retained for the period the company''s compliance policy sets.'
     status: Draft
+    depends_on:
+      - REQ-603
   - id: REQ-605
     title: Calculate rebar weight and tonnage
     priority: Must
@@ -56,6 +62,8 @@ requirements:
     priority: Should
     description: '[non-functional] A downloaded course is usable without network; progress syncs later.'
     status: Draft
+    depends_on:
+      - REQ-602
 bounded_contexts:
   - id: BC-601
     name: Learning

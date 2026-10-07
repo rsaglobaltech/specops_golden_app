@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Foreman Log (CYB)
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,21 +21,29 @@ requirements:
     priority: Must
     description: '[functional] A foreman records audio notes (up to 5 minutes each) on an entry; audio is stored with the entry and can be played from the office.'
     status: Draft
+    depends_on:
+      - REQ-301
   - id: REQ-303
     title: Entries are tamper-evident
     priority: Must
     description: '[business-rule] An entry''s capture time, location and media hashes are fixed at capture; edits append a revision and never change the original, so the log can back a claim with the general contractor.'
     status: Draft
+    depends_on:
+      - REQ-301
   - id: REQ-304
     title: Transcribe audio notes
     priority: Could
     description: '[functional] Audio notes are transcribed (English and Spanish) so they can be searched and quoted.'
     status: Draft
+    depends_on:
+      - REQ-302
   - id: REQ-305
     title: Share an entry as evidence
     priority: Should
     description: '[functional] A foreman or the office exports an entry, or a date range of entries, as a PDF with photos, transcript, timestamps and map.'
     status: Draft
+    depends_on:
+      - REQ-301
 bounded_contexts:
   - id: BC-301
     name: ForemanLog

@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Time & Attendance
-  version: 0.1.0
+  version: 0.1.2
   language: en
   project_type: backend
 variables:
@@ -21,36 +21,50 @@ requirements:
     priority: Must
     description: '[functional] A worker can always clock out — refusing it would inflate hours — but a clock-out whose fix lies outside the jobsite geofence is recorded with the flag OUTSIDE_GEOFENCE for supervisor review.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-103
     title: Every punch is immutable and carries its evidence
     priority: Must
     description: '[business-rule] A punch records worker, jobsite, type (in/out), device time, server receipt time, elapsed monotonic time, latitude, longitude and accuracy. Once written it is never edited; a correction is a separate adjustment record with a reason, an author and an approver.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-104
     title: Reject spoofed locations and compromised devices
     priority: Must
     description: '[functional] A punch whose location is reported as mocked by the OS, or that comes from a rooted or jailbroken device, is refused. A fix with accuracy worse than 100 m is accepted only with the flag LOW_ACCURACY.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-105
     title: Capture punches offline and sync them without trusting the device clock
     priority: Must
     description: '[functional] With no network a punch is stored on the device with its device time and the monotonic elapsed time since boot, and synced when the network returns. The server reconstructs the capture time from the monotonic clock and flags CLOCK_TAMPERED when device time and reconstructed time differ by more than 2 minutes.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-106
     title: Verify identity with a photo at clock in
     priority: Should
     description: '[functional] Clock-in takes a front-camera photo stored with the punch, so a supervisor can spot buddy punching. Photos are never used for automated biometric matching without written consent.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-107
     title: Supervisors review flagged punches
     priority: Must
     description: '[functional] A supervisor sees every flagged punch of their crews with its evidence (map, accuracy, photo, flags) and approves or rejects it with a reason. The decision is recorded, not the punch edited.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-108
     title: Correct a punch through an approved adjustment
     priority: Must
     description: '[business-rule] A missed or wrong punch is corrected by an adjustment that states the corrected time and a reason, entered by the worker or a supervisor and approved by someone other than its author.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-109
     title: Configure a geofence per jobsite
     priority: Must
@@ -61,21 +75,29 @@ requirements:
     priority: Should
     description: '[functional] A worker sees their punches and total hours per day and per week, including pending adjustments, in English or Spanish.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-111
     title: Export timesheets for payroll
     priority: Should
     description: '[functional] An administrator exports approved timesheets per pay period as CSV (worker, jobsite, date, in, out, breaks, regular and overtime hours). Unresolved flags block the export of the affected rows.'
     status: Draft
+    depends_on:
+      - REQ-108
   - id: REQ-112
     title: A punch is confirmed on the device within 2 seconds
     priority: Must
     description: '[non-functional] From the tap to the on-screen confirmation, online or offline, a punch completes in under 2 seconds on a mid-range Android phone.'
     status: Draft
+    depends_on:
+      - REQ-101
   - id: REQ-113
     title: Location is captured only at punch time
     priority: Must
     description: '[non-functional] The app reads location only while a punch is being taken. It does not track workers off shift or in the background (California privacy expectations; CCPA).'
     status: Draft
+    depends_on:
+      - REQ-101
 bounded_contexts:
   - id: BC-101
     name: Attendance

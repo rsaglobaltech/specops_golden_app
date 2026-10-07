@@ -377,3 +377,18 @@ PACKS = [
         ],
     },
 ]
+
+
+# What each requirement builds on, by requirement number within its pack
+# Cross-pack dependencies are not expressible yet: Specgate's depends_on
+# resolves only within one pack (reported upstream). The harness stacks a requirement's
+# branch on its dependencies instead of building it from the same base — built
+# in parallel, REQ-101 and REQ-104 each invented their own Punch and Geofence.
+DEPENDS = {
+    "time-attendance": {2: [1], 3: [1], 4: [1], 5: [1], 6: [1], 7: [1], 8: [1], 10: [1], 11: [8], 12: [1], 13: [1]},
+    "job-files": {2: [1], 3: [1], 4: [1], 5: [1], 7: [6], 8: [2], 9: [1]},
+    "foreman-log": {2: [1], 3: [1], 4: [2], 5: [1]},
+    "daily-reports": {2: [1], 3: [1], 4: [1], 5: [4]},
+    "ai-communication": {2: [1], 3: [2], 4: [1], 5: [1]},
+    "learning": {2: [1], 3: [2], 4: [3], 9: [2]},
+}

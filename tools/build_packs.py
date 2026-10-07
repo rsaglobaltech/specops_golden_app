@@ -17,10 +17,10 @@ import sys
 import yaml
 
 sys.path.insert(0, os.path.dirname(__file__))
-from packs_data import PACKS  # noqa: E402
+from packs_data import DEPENDS, PACKS  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERSION = "0.1.0"
+VERSION = "0.1.2"
 
 
 class IndentedDumper(yaml.SafeDumper):
@@ -54,6 +54,8 @@ def build(pack):
         }
         for i, (title, prio, kind, desc) in enumerate(pack["requirements"], 1)
     ]
+    for i, deps in DEPENDS.get(pack["slug"], {}).items():
+        reqs[i - 1]["depends_on"] = [d if isinstance(d, str) else ident("REQ", r, d) for d in deps]
 
     agg_names = sorted({a for _, _, _, aggs in pack["contexts"] for a in aggs})
     contexts = [
