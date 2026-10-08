@@ -478,3 +478,8 @@ MORE_SCENARIOS = {
 }
 for _pack in PACKS:
     _pack["scenarios"] = _pack["scenarios"] + MORE_SCENARIOS.get(_pack["slug"], [])
+
+# v0.2.0 — API and screen scenarios; see tools/api_ui_scenarios.py.
+from api_ui_scenarios import API_UI_SCENARIOS  # noqa: E402
+for _pack in PACKS:
+    _pack["scenarios"] = _pack["scenarios"] + API_UI_SCENARIOS.get(_pack["slug"], [])

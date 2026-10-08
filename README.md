@@ -23,7 +23,7 @@ project.
 ```bash
 specgate specops add \
   --pack-repo https://github.com/rsaglobaltech/specops_golden_app.git \
-  --pack-version v0.1.3 \
+  --pack-version v0.2.0 \
   --pack time-attendance/backend \
   --var PROJECT_NAME="Golden App" --var PROJECT_SLUG=golden-app --var DOMAIN="rebar construction"
 ```

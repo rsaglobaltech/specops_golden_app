@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — AI Communication Assistant
-  version: 0.1.3
+  version: 0.2.0
   language: en
   project_type: backend
 variables:
@@ -157,4 +157,40 @@ scenarios:
     template: templates/features/an_english_email_is_explained_in_spanish.feature.tpl
     feature: An English email is explained in Spanish
     scenario: An English email is explained in Spanish
+    status: Draft
+  - id: SCN-506
+    requirement_id: REQ-501
+    use_case: UC-501
+    seed: true
+    target: features/ai-communication/api_an_email_is_explained_in_spanish.feature
+    template: templates/features/api_an_email_is_explained_in_spanish.feature.tpl
+    feature: 'API: an email is explained in Spanish'
+    scenario: 'API: an email is explained in Spanish'
+    status: Draft
+  - id: SCN-507
+    requirement_id: REQ-501
+    use_case: UC-501
+    seed: true
+    target: features/ai-communication/screen_a_user_gets_an_email_explained.feature
+    template: templates/features/screen_a_user_gets_an_email_explained.feature.tpl
+    feature: 'Screen: a user gets an email explained'
+    scenario: 'Screen: a user gets an email explained'
+    status: Draft
+  - id: SCN-508
+    requirement_id: REQ-502
+    use_case: UC-502
+    seed: true
+    target: features/ai-communication/api_a_reply_is_drafted_never_sent.feature
+    template: templates/features/api_a_reply_is_drafted_never_sent.feature.tpl
+    feature: 'API: a reply is drafted, never sent'
+    scenario: 'API: a reply is drafted, never sent'
+    status: Draft
+  - id: SCN-509
+    requirement_id: REQ-502
+    use_case: UC-502
+    seed: true
+    target: features/ai-communication/screen_a_drafted_reply_can_be_copied_not_sent.feature
+    template: templates/features/screen_a_drafted_reply_can_be_copied_not_sent.feature.tpl
+    feature: 'Screen: a drafted reply can be copied, not sent'
+    scenario: 'Screen: a drafted reply can be copied, not sent'
     status: Draft

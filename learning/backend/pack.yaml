@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Foreman Learning
-  version: 0.1.3
+  version: 0.2.0
   language: en
   project_type: backend
 variables:
@@ -279,4 +279,94 @@ scenarios:
     template: templates/features/a_plan_reader_answer_cites_the_sheet_and_carries_the_warning.feature.tpl
     feature: A plan reader answer cites the sheet and carries the warning
     scenario: A plan reader answer cites the sheet and carries the warning
+    status: Draft
+  - id: SCN-610
+    requirement_id: REQ-601
+    use_case: UC-601
+    seed: true
+    target: features/learning/api_the_course_catalogue_in_spanish.feature
+    template: templates/features/api_the_course_catalogue_in_spanish.feature.tpl
+    feature: 'API: the course catalogue in Spanish'
+    scenario: 'API: the course catalogue in Spanish'
+    status: Draft
+  - id: SCN-611
+    requirement_id: REQ-601
+    use_case: UC-601
+    seed: true
+    target: features/learning/screen_a_foreman_browses_the_courses.feature
+    template: templates/features/screen_a_foreman_browses_the_courses.feature.tpl
+    feature: 'Screen: a foreman browses the courses'
+    scenario: 'Screen: a foreman browses the courses'
+    status: Draft
+  - id: SCN-612
+    requirement_id: REQ-602
+    use_case: UC-602
+    seed: true
+    target: features/learning/api_completing_a_lesson_moves_the_progress.feature
+    template: templates/features/api_completing_a_lesson_moves_the_progress.feature.tpl
+    feature: 'API: completing a lesson moves the progress'
+    scenario: 'API: completing a lesson moves the progress'
+    status: Draft
+  - id: SCN-613
+    requirement_id: REQ-602
+    use_case: UC-602
+    seed: true
+    target: features/learning/screen_a_lesson_question_gives_feedback.feature
+    template: templates/features/screen_a_lesson_question_gives_feedback.feature.tpl
+    feature: 'Screen: a lesson question gives feedback'
+    scenario: 'Screen: a lesson question gives feedback'
+    status: Draft
+  - id: SCN-614
+    requirement_id: REQ-603
+    use_case: UC-603
+    seed: true
+    target: features/learning/api_a_quiz_is_scored.feature
+    template: templates/features/api_a_quiz_is_scored.feature.tpl
+    feature: 'API: a quiz is scored'
+    scenario: 'API: a quiz is scored'
+    status: Draft
+  - id: SCN-615
+    requirement_id: REQ-603
+    use_case: UC-603
+    seed: true
+    target: features/learning/screen_a_foreman_sees_the_quiz_result.feature
+    template: templates/features/screen_a_foreman_sees_the_quiz_result.feature.tpl
+    feature: 'Screen: a foreman sees the quiz result'
+    scenario: 'Screen: a foreman sees the quiz result'
+    status: Draft
+  - id: SCN-616
+    requirement_id: REQ-605
+    use_case: UC-605
+    seed: true
+    target: features/learning/api_the_tonnage_calculator.feature
+    template: templates/features/api_the_tonnage_calculator.feature.tpl
+    feature: 'API: the tonnage calculator'
+    scenario: 'API: the tonnage calculator'
+    status: Draft
+  - id: SCN-617
+    requirement_id: REQ-605
+    use_case: UC-605
+    seed: true
+    target: features/learning/screen_a_foreman_calculates_tonnage.feature
+    template: templates/features/screen_a_foreman_calculates_tonnage.feature.tpl
+    feature: 'Screen: a foreman calculates tonnage'
+    scenario: 'Screen: a foreman calculates tonnage'
+    status: Draft
+  - id: SCN-618
+    requirement_id: REQ-608
+    use_case: UC-606
+    seed: true
+    target: features/learning/api_the_plan_reader_cites_the_sheet.feature
+    template: templates/features/api_the_plan_reader_cites_the_sheet.feature.tpl
+    feature: 'API: the plan reader cites the sheet'
+    scenario: 'API: the plan reader cites the sheet'
+    status: Draft
+  - id: SCN-619
+    requirement_id: REQ-608
+    use_case: UC-606
+    seed: true
+    target: features/learning/screen_a_plan_reader_answer_shows_the_warning.feature
+    template: templates/features/screen_a_plan_reader_answer_shows_the_warning.feature.tpl
+    feature: 'Screen: a plan reader answer shows the warning'
+    scenario: 'Screen: a plan reader answer shows the warning'
     status: Draft

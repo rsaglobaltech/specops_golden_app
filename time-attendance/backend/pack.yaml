@@ -2,7 +2,7 @@
 schema_version: 1.3.0
 metadata:
   name: Golden State — Time & Attendance
-  version: 0.1.3
+  version: 0.2.0
   language: en
   project_type: backend
 variables:
@@ -425,4 +425,112 @@ scenarios:
     template: templates/features/an_unresolved_flag_holds_back_only_its_own_row_from_the_export.feature.tpl
     feature: An unresolved flag holds back only its own row from the export
     scenario: An unresolved flag holds back only its own row from the export
+    status: Draft
+  - id: SCN-115
+    requirement_id: REQ-101
+    use_case: UC-101
+    seed: true
+    target: features/time-attendance/api_a_clock_in_outside_the_geofence_is_refused_with_the_distance.feature
+    template: templates/features/api_a_clock_in_outside_the_geofence_is_refused_with_the_distance.feature.tpl
+    feature: 'API: a clock in outside the geofence is refused with the distance'
+    scenario: 'API: a clock in outside the geofence is refused with the distance'
+    status: Draft
+  - id: SCN-116
+    requirement_id: REQ-101
+    use_case: UC-101
+    seed: true
+    target: features/time-attendance/screen_the_worker_clocks_in_from_the_home_screen.feature
+    template: templates/features/screen_the_worker_clocks_in_from_the_home_screen.feature.tpl
+    feature: 'Screen: the worker clocks in from the home screen'
+    scenario: 'Screen: the worker clocks in from the home screen'
+    status: Draft
+  - id: SCN-117
+    requirement_id: REQ-102
+    use_case: UC-102
+    seed: true
+    target: features/time-attendance/api_a_clock_out_outside_the_geofence_is_accepted_with_a_flag.feature
+    template: templates/features/api_a_clock_out_outside_the_geofence_is_accepted_with_a_flag.feature.tpl
+    feature: 'API: a clock out outside the geofence is accepted with a flag'
+    scenario: 'API: a clock out outside the geofence is accepted with a flag'
+    status: Draft
+  - id: SCN-118
+    requirement_id: REQ-102
+    use_case: UC-102
+    seed: true
+    target: features/time-attendance/screen_a_clock_out_outside_the_jobsite_says_a_supervisor_will_review_it.feature
+    template: templates/features/screen_a_clock_out_outside_the_jobsite_says_a_supervisor_will_review_it.feature.tpl
+    feature: 'Screen: a clock out outside the jobsite says a supervisor will review it'
+    scenario: 'Screen: a clock out outside the jobsite says a supervisor will review it'
+    status: Draft
+  - id: SCN-119
+    requirement_id: REQ-105
+    use_case: UC-103
+    seed: true
+    target: features/time-attendance/api_offline_punches_sync_with_their_reconstructed_times.feature
+    template: templates/features/api_offline_punches_sync_with_their_reconstructed_times.feature.tpl
+    feature: 'API: offline punches sync with their reconstructed times'
+    scenario: 'API: offline punches sync with their reconstructed times'
+    status: Draft
+  - id: SCN-120
+    requirement_id: REQ-105
+    use_case: UC-103
+    seed: true
+    target: features/time-attendance/screen_the_app_tells_the_worker_its_offline_punches_were_sent.feature
+    template: templates/features/screen_the_app_tells_the_worker_its_offline_punches_were_sent.feature.tpl
+    feature: 'Screen: the app tells the worker its offline punches were sent'
+    scenario: 'Screen: the app tells the worker its offline punches were sent'
+    status: Draft
+  - id: SCN-121
+    requirement_id: REQ-107
+    use_case: UC-104
+    seed: true
+    target: features/time-attendance/api_a_supervisor_rejects_a_flagged_punch.feature
+    template: templates/features/api_a_supervisor_rejects_a_flagged_punch.feature.tpl
+    feature: 'API: a supervisor rejects a flagged punch'
+    scenario: 'API: a supervisor rejects a flagged punch'
+    status: Draft
+  - id: SCN-122
+    requirement_id: REQ-108
+    use_case: UC-105
+    seed: true
+    target: features/time-attendance/api_an_adjustment_cannot_be_approved_by_its_author.feature
+    template: templates/features/api_an_adjustment_cannot_be_approved_by_its_author.feature.tpl
+    feature: 'API: an adjustment cannot be approved by its author'
+    scenario: 'API: an adjustment cannot be approved by its author'
+    status: Draft
+  - id: SCN-123
+    requirement_id: REQ-109
+    use_case: UC-106
+    seed: true
+    target: features/time-attendance/api_a_geofence_radius_outside_30_1000_m_is_refused.feature
+    template: templates/features/api_a_geofence_radius_outside_30_1000_m_is_refused.feature.tpl
+    feature: 'API: a geofence radius outside 30–1000 m is refused'
+    scenario: 'API: a geofence radius outside 30–1000 m is refused'
+    status: Draft
+  - id: SCN-124
+    requirement_id: REQ-110
+    use_case: UC-107
+    seed: true
+    target: features/time-attendance/api_a_worker_reads_the_day_s_hours.feature
+    template: templates/features/api_a_worker_reads_the_day_s_hours.feature.tpl
+    feature: 'API: a worker reads the day''s hours'
+    scenario: 'API: a worker reads the day''s hours'
+    status: Draft
+  - id: SCN-125
+    requirement_id: REQ-110
+    use_case: UC-107
+    seed: true
+    target: features/time-attendance/screen_a_worker_sees_the_day_s_hours.feature
+    template: templates/features/screen_a_worker_sees_the_day_s_hours.feature.tpl
+    feature: 'Screen: a worker sees the day''s hours'
+    scenario: 'Screen: a worker sees the day''s hours'
+    status: Draft
+  - id: SCN-126
+    requirement_id: REQ-111
+    use_case: UC-108
+    seed: true
+    target: features/time-attendance/api_the_payroll_export_is_csv_and_reports_held_back_rows.feature
+    template: templates/features/api_the_payroll_export_is_csv_and_reports_held_back_rows.feature.tpl
+    feature: 'API: the payroll export is CSV and reports held-back rows'
+    scenario: 'API: the payroll export is CSV and reports held-back rows'
     status: Draft
